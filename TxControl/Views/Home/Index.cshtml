@@ -18,8 +18,8 @@
 {
     settings.DocumentFileDirectory = Server.MapPath("~/App_Data/Documents");
 }).LoadXMLDatabase(
-    Server.MapPath("~/App_Data/Documents/sample_db.xml")).LoadText(
-    Server.MapPath("~/App_Data/Documents/invoice.docx"),
+    Server.MapPath("~/App_Data/Document/sample_db.xml")).LoadText(
+    Server.MapPath("~/App_Data/Document/invoice.docx"),
         StreamType.WordprocessingML).Render()
     </div>
 </body>
