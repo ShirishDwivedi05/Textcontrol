@@ -1,0 +1,26 @@
+﻿@using TXTextControl.Web
+@using TXTextControl.Web.MVC
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    @*Refference Url https://www.textcontrol.com/knowledge/creating-an-aspnet-mvc-application-with-razor/*@
+    <div style="width:100%; height:100%">
+    @Html.TXTextControl().TextControl(settings =>
+{
+    settings.DocumentFileDirectory = Server.MapPath("~/App_Data/Documents");
+}).LoadXMLDatabase(
+    Server.MapPath("~/App_Data/Documents/sample_db.xml")).LoadText(
+    Server.MapPath("~/App_Data/Documents/invoice.docx"),
+        StreamType.WordprocessingML).Render()
+    </div>
+</body>
+</html>
